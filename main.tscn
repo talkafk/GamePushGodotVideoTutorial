@@ -1,0 +1,293 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4c7sc27dyx4b"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_6s6mc"]
+[ext_resource type="Texture2D" uid="uid://m4t66p7ucffy" path="res://assets/rb_2149223021.png" id="2_soxtk"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_6s6mc")
+
+[node name="kliker" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 176.0
+offset_right = 616.0
+offset_bottom = 216.0
+
+[node name="+1_score" type="Button" parent="kliker"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 12.0
+offset_right = 18.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+1 Score"
+
+[node name="Score" type="Label" parent="kliker"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -52.0
+offset_right = 4.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="Label" type="Label" parent="kliker"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -56.0
+offset_right = 24.0
+offset_bottom = -33.0
+text = "Score:"
+
+[node name="kliker2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 688.0
+offset_top = 176.0
+offset_right = 728.0
+offset_bottom = 216.0
+
+[node name="+1_gold" type="Button" parent="kliker2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 12.0
+offset_right = 18.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+1 Score"
+
+[node name="Gold" type="Label" parent="kliker2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -52.0
+offset_right = 4.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="Label" type="Label" parent="kliker2"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -56.0
+offset_right = 24.0
+offset_bottom = -33.0
+text = "Gold:"
+
+[node name="kliker3" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 248.0
+offset_top = 320.0
+offset_right = 288.0
+offset_bottom = 360.0
+
+[node name="+1_attack" type="Button" parent="kliker3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -44.0
+offset_right = 98.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+1 attack"
+
+[node name="Attack" type="Label" parent="kliker3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -52.0
+offset_right = 4.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="Label" type="Label" parent="kliker3"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -56.0
+offset_right = 24.0
+offset_bottom = -33.0
+text = "Attack:"
+
+[node name="kliker4" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 248.0
+offset_top = 416.0
+offset_right = 288.0
+offset_bottom = 456.0
+
+[node name="+1_Defense" type="Button" parent="kliker4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -44.0
+offset_right = 98.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+1 defense"
+
+[node name="Defense" type="Label" parent="kliker4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -52.0
+offset_right = 4.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="Label" type="Label" parent="kliker4"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -56.0
+offset_right = 44.0
+offset_bottom = -33.0
+text = "Defense:"
+
+[node name="Leaderboard_score" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = -36.0
+offset_right = 241.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Leaderboard score"
+
+[node name="Leaderboard_gold" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = 12.0
+offset_right = 233.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Leaderboard gold"
+
+[node name="Purchase" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = 84.0
+offset_right = 168.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "purchase"
+
+[node name="Subsciption" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 288.0
+offset_top = -108.0
+offset_right = 512.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Subscibe" type="Button" parent="Subsciption"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 77.0
+offset_bottom = 151.0
+text = "Subcsibe"
+
+[node name="Unsubscibe" type="Button" parent="Subsciption"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 120.0
+offset_right = 186.0
+offset_bottom = 151.0
+text = "Unsubcsibe"
+
+[node name="TextureRect" type="TextureRect" parent="Subsciption"]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 183.433
+offset_bottom = 112.0
+texture = ExtResource("2_soxtk")
+expand_mode = 3
+
+[connection signal="pressed" from="kliker/+1_score" to="." method="_on__score_pressed"]
+[connection signal="pressed" from="kliker2/+1_gold" to="." method="_on__gold_pressed"]
+[connection signal="pressed" from="kliker3/+1_attack" to="." method="_on__attack_pressed"]
+[connection signal="pressed" from="kliker4/+1_Defense" to="." method="_on__defense_pressed"]
+[connection signal="pressed" from="Leaderboard_score" to="." method="_on_leaderboard_score_pressed"]
+[connection signal="pressed" from="Leaderboard_gold" to="." method="_on_leaderboard_gold_pressed"]
+[connection signal="pressed" from="Purchase" to="." method="_on_purchase_pressed"]
+[connection signal="pressed" from="Subsciption/Subscibe" to="." method="_on_subscibe_pressed"]
+[connection signal="pressed" from="Subsciption/Unsubscibe" to="." method="_on_unsubscibe_pressed"]

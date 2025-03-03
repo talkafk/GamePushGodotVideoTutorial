@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="TutorialDemo"
+run/main_scene="res://Loading.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GP="*res://addons/gamepush/game_push.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gamepush/plugin.cfg")
+
+[game_push]
+
+config/project_id="19049"
+config/token="G5UWtF1CgZ3HpWa2pVlXiivOM4f7iY8n"
+config/is_archive=true
+config/is_preloader_show=false
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

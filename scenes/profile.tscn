@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://cor8h42x4lnyu"]
+
+[ext_resource type="Script" path="res://scenes/profile.gd" id="1_rkhqm"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0y8my"]
+
+[node name="Profile" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rkhqm")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 109.0
+offset_bottom = 63.0
+text = "Back
+"
+
+[node name="Save profile" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 109.0
+offset_bottom = 287.0
+text = "Save Profile
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 115.0
+offset_bottom = 87.0
+text = "Name:"
+
+[node name="Name" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 88.0
+offset_right = 131.062
+offset_bottom = 119.0
+placeholder_text = "Name"
+
+[node name="Avatar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 192.0
+offset_bottom = 248.0
+texture = SubResource("PlaceholderTexture2D_0y8my")
+expand_mode = 1
+
+[node name="SecretCode" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 352.0
+offset_right = 208.0
+offset_bottom = 383.0
+placeholder_text = "SecretCode"
+editable = false
+
+[node name="SwitchProfile" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 392.0
+offset_right = 178.0
+offset_bottom = 423.0
+text = "Switch Profile
+"
+
+[node name="UploadAvatar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 128.0
+offset_right = 272.0
+offset_bottom = 159.0
+text = "Upload
+"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Save profile" to="." method="_on_save_profile_pressed"]
+[connection signal="text_changed" from="Name" to="." method="_on_name_text_changed"]
+[connection signal="pressed" from="SwitchProfile" to="." method="_on_switch_profile_pressed"]
+[connection signal="pressed" from="UploadAvatar" to="." method="_on_upload_avatar_pressed"]
