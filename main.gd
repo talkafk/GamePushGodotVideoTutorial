@@ -35,9 +35,11 @@ func _ready() -> void:
 		$Subsciption/TextureRect.show()
 
 func _on__score_pressed() -> void:
-	if GP.Player.get_value('energy') > 0:
+	if GP.Player.get_value('energy') >= 1:
 		GP.Player.add_value('energy', -1)
 		score += 1
+		GP.Player.sync()
+
 
 func _on__gold_pressed() -> void:
 	gold += 1
@@ -97,17 +99,47 @@ func update_energy_ui() -> void:
 
 func _on_update_ui_timeout() -> void:
 	update_energy_ui()
+	update_chest_ui($CommonChest, "common-chest")
+	update_chest_ui($RareChest, "rare-chest")
+	update_chest_ui($EpicChest, "epic-chest")
 
 
 func _on_plus_one_pressed() -> void:
 	GP.Player.add_value('energy', 1)
+	GP.Player.sync()
 
 
 func _on_plus_one_max_pressed() -> void:
 	GP.Player.add_value('energy:max', 1)
+	GP.Player.sync()
 
 
 func _on_refill_pressed() -> void:
-	GP.Player.set_value('energy', GP.Player.get_max_value("energy"))
+	GP.Player.set_value("energy", GP.Player.get_max_value("energy"))
 	GP.Player.sync()
 	 
+	
+func update_chest_ui(Chest:Button, tag:String) -> void:
+	if GP.Player.get_value(tag) >= 1:
+		Chest.disabled = false
+	else:
+		Chest.disabled = true
+	Chest.get_node("LabelTime").text = str(GP.Player.get_value(tag + ":secondsLeftTotal")) + "s"
+
+
+func _on_common_chest_pressed() -> void:
+	GP.Player.add_value("common-chest", -1)
+	gold += 10
+	GP.Player.sync()
+
+
+func _on_rare_chest_pressed() -> void:
+	GP.Player.add_value("rare-chest", -1)
+	gold += 100
+	GP.Player.sync()
+
+
+func _on_epic_chest_pressed() -> void:
+	GP.Player.add_value("epic-chest", -1)
+	gold += 1000
+	GP.Player.sync()

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4c7sc27dyx4b"]
+[gd_scene load_steps=6 format=3 uid="uid://b4c7sc27dyx4b"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6s6mc"]
 [ext_resource type="Texture2D" uid="uid://m4t66p7ucffy" path="res://assets/rb_2149223021.png" id="2_soxtk"]
+[ext_resource type="Texture2D" uid="uid://ca8sdj44kjnxe" path="res://assets/chest1.png" id="3_da5vh"]
+[ext_resource type="Texture2D" uid="uid://cx4jrgakecsw5" path="res://assets/chest2.png" id="4_r616u"]
+[ext_resource type="Texture2D" uid="uid://p1emls4mgwlc" path="res://assets/chest3.png" id="5_gqv6w"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -284,17 +287,11 @@ expand_mode = 3
 
 [node name="Energy" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -368.0
-offset_top = -140.0
-offset_right = -136.0
-offset_bottom = -68.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_left = 192.0
+offset_top = 184.0
+offset_right = 424.0
+offset_bottom = 256.0
 
 [node name="ProgressBar" type="ProgressBar" parent="Energy"]
 layout_mode = 1
@@ -347,6 +344,92 @@ text = "Refill"
 wait_time = 0.1
 autostart = true
 
+[node name="CommonChest" type="Button" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 320.0
+offset_right = 448.0
+offset_bottom = 384.0
+disabled = true
+icon = ExtResource("3_da5vh")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="CommonChest"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -24.0
+offset_right = 56.0
+offset_bottom = -1.0
+text = "+10 G"
+horizontal_alignment = 1
+
+[node name="LabelTime" type="Label" parent="CommonChest"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 56.0
+offset_bottom = 87.0
+text = "000s"
+horizontal_alignment = 1
+
+[node name="RareChest" type="Button" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 320.0
+offset_right = 536.0
+offset_bottom = 384.0
+disabled = true
+icon = ExtResource("4_r616u")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="RareChest"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -24.0
+offset_right = 61.0
+offset_bottom = -1.0
+text = "+100 G"
+horizontal_alignment = 1
+
+[node name="LabelTime" type="Label" parent="RareChest"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 56.0
+offset_bottom = 87.0
+text = "000s"
+horizontal_alignment = 1
+
+[node name="EpicChest" type="Button" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 320.0
+offset_right = 616.0
+offset_bottom = 384.0
+disabled = true
+icon = ExtResource("5_gqv6w")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="EpicChest"]
+layout_mode = 0
+offset_top = -24.0
+offset_right = 62.0
+offset_bottom = -1.0
+text = "+1000 G"
+horizontal_alignment = 1
+
+[node name="LabelTime" type="Label" parent="EpicChest"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 56.0
+offset_bottom = 87.0
+text = "000s"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="kliker/+1_score" to="." method="_on__score_pressed"]
 [connection signal="pressed" from="kliker2/+1_gold" to="." method="_on__gold_pressed"]
 [connection signal="pressed" from="kliker3/+1_attack" to="." method="_on__attack_pressed"]
@@ -360,3 +443,6 @@ autostart = true
 [connection signal="pressed" from="Energy/+1 Max" to="." method="_on_plus_one_max_pressed"]
 [connection signal="pressed" from="Energy/refill" to="." method="_on_refill_pressed"]
 [connection signal="timeout" from="Energy/Update_ui" to="." method="_on_update_ui_timeout"]
+[connection signal="pressed" from="CommonChest" to="." method="_on_common_chest_pressed"]
+[connection signal="pressed" from="RareChest" to="." method="_on_rare_chest_pressed"]
+[connection signal="pressed" from="EpicChest" to="." method="_on_epic_chest_pressed"]
