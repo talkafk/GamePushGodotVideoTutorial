@@ -282,6 +282,71 @@ offset_bottom = 112.0
 texture = ExtResource("2_soxtk")
 expand_mode = 3
 
+[node name="Energy" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -140.0
+offset_right = -136.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Energy"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+offset_right = 136.0
+grow_vertical = 0
+max_value = 10.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Energy/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0/10(111s)"
+horizontal_alignment = 1
+
+[node name="+1" type="Button" parent="Energy"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 40.0
+offset_right = 171.0
+offset_bottom = 71.0
+text = "+1
+"
+
+[node name="+1 Max" type="Button" parent="Energy"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 40.0
+offset_right = 296.0
+offset_bottom = 71.0
+text = "+1 Max
+"
+
+[node name="refill" type="Button" parent="Energy"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 40.0
+offset_right = 223.0
+offset_bottom = 71.0
+text = "Refill"
+
+[node name="Update_ui" type="Timer" parent="Energy"]
+wait_time = 0.1
+autostart = true
+
 [connection signal="pressed" from="kliker/+1_score" to="." method="_on__score_pressed"]
 [connection signal="pressed" from="kliker2/+1_gold" to="." method="_on__gold_pressed"]
 [connection signal="pressed" from="kliker3/+1_attack" to="." method="_on__attack_pressed"]
@@ -291,3 +356,7 @@ expand_mode = 3
 [connection signal="pressed" from="Purchase" to="." method="_on_purchase_pressed"]
 [connection signal="pressed" from="Subsciption/Subscibe" to="." method="_on_subscibe_pressed"]
 [connection signal="pressed" from="Subsciption/Unsubscibe" to="." method="_on_unsubscibe_pressed"]
+[connection signal="pressed" from="Energy/+1" to="." method="_on_plus_one_pressed"]
+[connection signal="pressed" from="Energy/+1 Max" to="." method="_on_plus_one_max_pressed"]
+[connection signal="pressed" from="Energy/refill" to="." method="_on_refill_pressed"]
+[connection signal="timeout" from="Energy/Update_ui" to="." method="_on_update_ui_timeout"]

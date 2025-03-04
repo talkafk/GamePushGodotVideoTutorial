@@ -33,16 +33,14 @@ func _ready() -> void:
 	GP.Payments.subscribed.connect(_on_gp_subscribed)
 	if GP.Payments.has(ID_VIP):
 		$Subsciption/TextureRect.show()
-	
 
 func _on__score_pressed() -> void:
-	if GP.Player.get_value('energy') >= 1: 
-		GP.Player.add_value("energy", -1)
+	if GP.Player.get_value('energy') > 0:
+		GP.Player.add_value('energy', -1)
 		score += 1
 
 func _on__gold_pressed() -> void:
 	gold += 1
-
 
 func _on__attack_pressed() -> void:
 	data["Attack"] = data.get("Attack", 0) + 1
@@ -88,3 +86,28 @@ func _on_gp_subscribed(data):
 
 func _on_unsubscibe_pressed():
 	GP.Payments.unsubscribe(ID_VIP)
+
+
+func update_energy_ui() -> void:
+	$Energy/ProgressBar.value = GP.Player.get_value("energy")
+	$Energy/ProgressBar.max_value = GP.Player.get_value("energy:max")
+	$Energy/ProgressBar/Label.text = str(GP.Player.get_value("energy")) +"/" + str(GP.Player.get_value("energy:max")) +\
+	"(" + str(GP.Player.get_value('energy:secondsLeftTotal')) + "s)"
+
+
+func _on_update_ui_timeout() -> void:
+	update_energy_ui()
+
+
+func _on_plus_one_pressed() -> void:
+	GP.Player.add_value('energy', 1)
+
+
+func _on_plus_one_max_pressed() -> void:
+	GP.Player.add_value('energy:max', 1)
+
+
+func _on_refill_pressed() -> void:
+	GP.Player.set_value('energy', GP.Player.get_max_value("energy"))
+	GP.Player.sync()
+	 
